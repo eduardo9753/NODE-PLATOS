@@ -1,0 +1,43 @@
+<section>
+    <div class="container">
+        <h1 class="py-3">PLATOS PUBLICADOS</h1>
+        <div class="row">
+            {{#each plates}}
+            <div class="col-md-4 my-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <img src="/{{path}}" alt="Image of the House">
+                            <input type="text" autofocus class="input-focus-direction">
+                            <!--input de direccion -->
+                        </div>
+                        <div class="card-body">
+                            <h2 class=""> Title <i class='bx bxs-select-multiple'></i> : {{nombre}}</h2>
+                            <p class=""> Price <i class='bx bxs-coin-stack'></i> : {{precio}}</p>
+                            <p class=""> File Name <i class='bx bxs-file-archive'></i> : {{foto}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class=""> Fecha <i class='bx bxs-calendar-edit'></i> : {{timeago createdAt}}</p>
+                            <form action="/view/{{_id}}" method="POST">
+                                <input type="submit" value="Ver mas a Detalle" class="btn-input">
+                            </form>
+                            <!-- <a href="/view/{{_id}}" class="btn-input">Ver mas a Detalle</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="centrar">
+                <div class="">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Por ahora no hay Platos en estos momentos</p>
+                            <a href="/users/signup" class="btn-input">Registrate para Publicar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+<section>
+    <div class="container">
+        <h1 class="my-3">TUS PUBLICACIONES {{user.name}}</h1>
+        <div class="row">
+            {{#each plates}}
+            <div class="col-md-4 my-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <img src="/{{path}}" alt="Image of the House">
+                        </div>
+                        <div class="card-body">
+                            <h2 class=""> Title <i class='bx bxs-select-multiple'></i> : {{nombre}}</h2>
+                            <p class=""> Description <i class='bx bxs-message-square-detail' ></i> : {{description}}</p>
+                            <p class=""> Price <i class='bx bxs-coin-stack'></i> : {{precio}}</p>
+                            <p class=""> File Name <i class='bx bxs-file-archive'></i> : {{foto}}</p>
+                            <p class=""> Dificultad de Preparacion <i class='bx bx-bar-chart-alt'></i> : {{nivel}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class=""> Fecha <i class='bx bxs-calendar-edit'></i> : {{timeago createdAt}}</p>
+                            <div>
+                                <form action="/plate/delete/{{_id}}?_method=DELETE" method="POST">
+                                    <div class="form-group">
+                                        <input type="hidden" name="_method" id="" value="">
+                                        <input type="submit" name="" id="" class="btn btn-danger" value="DELETE">
+                                    </div>
+                                </form>
+                                <a href="/plate/edit/{{_id}}" class="btn btn-success">EDITAR PLATO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div>
+                <div class="mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Por ahora no hay Platos</p>
+                            <a href="/plate/Form" class="btn-input">Registras tus plato Favoritos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

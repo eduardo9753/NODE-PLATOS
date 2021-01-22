@@ -1,0 +1,49 @@
+<section>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-body">
+                <form action="/plate/edit/{{data._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="my-2">New Foto</label>
+                                <input type="file" name="foto" id="" class="form-control" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="my-2">Nombre</label>
+                                <input type="text" name="name" id=""  value="{{data.nombre}}" class="form-control" required
+                                    placeholder="name of the plate">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="my-2">Description</label>
+                                <textarea name="description" id="" class="form-control">{{data.description}}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="my-2">Nivel de Preparacion</label>
+                                <select name="nivel" id="" class="form-control">
+                                    <option value="1">Nivel 1</option>
+                                    <option value="2">Nivel 2</option>
+                                    <option value="3">Nivel 3</option>
+                                    <option value="4">Nivel 4</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="my-2">Precio</label>
+                                <input type="text" name="precio" id="" value="{{data.precio}}" class="form-control" required
+                                    placeholder="price">
+                            </div>
+
+                            <div class="my-3">
+                                <input type="submit" class="btn-input" value="Update" name="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Foto Actual</p>
+                            <img src="/{{data.path}}" alt="Image of the House">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

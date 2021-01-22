@@ -1,0 +1,34 @@
+<section>
+    <div class="container">
+        <div>
+            <h2 class="text-center py-4"><span class="span-red">Vista del Plato</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class=""> Title <i class='bx bxs-select-multiple'></i> : {{plate.nombre}}</h2>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" autofocus class="input-focus-direction">
+                        <!--input de direccion -->
+                        <p class=""> Description <i class='bx bxs-message-square-detail'></i> : {{plate.description}}</p>
+                        <p class=""> File Name <i class='bx bxs-file-archive'></i> : {{plate.foto}}</p>
+                        <p class=""> Dificultad de Preparacion <i class='bx bx-bar-chart-alt'></i> : {{plate.nivel}}</p>
+                        <p class=""> Price <i class='bx bxs-coin-stack'></i> : {{plate.precio}}</p>
+                        <p class="">Type <i class='bx bxs-file-export'></i> : {{plate.mimetype}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class=""> Fecha <i class='bx bxs-calendar-edit'></i> : {{timeago plate.createdAt}}</p>
+                        <div><a href="/plates" class="btn-input">Regresar</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card-header">
+                    <img src="/{{plate.path}}" alt="MI plato">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

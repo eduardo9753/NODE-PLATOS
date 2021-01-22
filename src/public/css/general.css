@@ -1,0 +1,280 @@
+/*ESTILOS GENERALES PARA LA NAVEGACION DE LAS PAGINAS*/
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/*para direccionar alos botones ocultos de cada vista */
+.input-focus-direction{ width: 100%; height: 0px; border: 0px;}
+
+.span-red{ color: red;}
+.parrallax{
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.centrar{margin: auto auto; text-align: center;}
+.logo{width: 45px; height: 45px;}
+
+ul{list-style: none;}
+li{list-style: none;}
+a{text-decoration: none;}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.btn-grid{
+    display: inline-block;
+    width: 220px;
+    color: brown;
+    border: 1px solid brown;
+    padding: 10px 0px 10px 0px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+.btn-grid:hover{
+    background-color: brown;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 900;
+}
+
+.logo-user{
+    width: 18%;
+    height: 20%;
+    margin: auto auto;
+    text-align: center;
+    display: block;/*cubre todo y se centra el logo*/
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.link-nav{ 
+    color: #ffffff; 
+    font-size: 20px;
+    text-decoration: none;
+}
+.link-nav:hover{
+    color: yellow;
+    border-bottom: 1px solid yellow;
+    text-decoration: none;
+}
+
+.link-register{
+   display: inline-block;
+   width: 100%;
+   text-decoration: none;
+   color: yellow;
+   border: 1px solid yellow;
+   padding: 10px;
+   border-radius: 10px;
+}
+.link-register:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/*ESTILOS CAROUSEL*/
+.carousel .carousel-item img{ height: 340px;}
+.aling-center{align-items: center;}
+
+
+
+/*FONDO PLATOS GRID-4*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+@media(max-width: 600px){
+    .grid-container{
+        grid-template-columns: repeat(1,1fr);
+    }.btn-grid{
+        width: 80%;
+    }.fondo-plate{
+        width: 80%;
+        height: 240px;
+    }
+}
+@media(max-width : 800px){
+    .btn-grid{width: 80%;
+    }.fondo-plate{
+        width: 85%;
+        height: 240px;
+    }
+}
+.grid-container .grid-img{
+    width: 100%;
+    height: 400px;
+}
+.grid-container .title-grid{
+    padding-top: 15px;
+}
+.grid-container .position-middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+.grid-container .fondo-plate{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.grid-container .description-grid{
+    position: absolute;
+    top: 65%;
+    left: 55%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+.grid-container .description-grid p{
+    width: 450px;
+    font-size: 34px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(184, 22, 22, 0.8);
+}
+@media(max-width : 600px) {
+    .grid-container .description-grid p{display: none;}
+}
+@media(max-width : 800px){
+    .grid-container .description-grid p{ display: none;}
+}
+/*ESTILOS GALERIA DE IMAGENES*/
+.grid-imagenes{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+
+@media(max-width: 600px){
+    .grid-imagenes{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width: 800px){
+    .grid-imagenes{
+        grid-template-columns: repeat(2,2fr);
+    }
+}
+
+.box-imagen{overflow: hidden;}
+.box-imagen img{transition: all .3s ease-in-out;}
+.box-imagen img:hover{transform: scale(1.1);}
+
+.grid-imagenes img{cursor: pointer;}
+
+.contenedor-imagen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; /*lo escondemos */
+}
+
+.close{
+    position: fixed;
+    left: 2%;
+    top: 2%;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 100%;
+}
+.show{display: block;}/*APARECER EL contenedor-imagen*/
+.hide{display: none;}
+
+.agregar-imagen{
+    width: 70%;
+    height: 90vh;
+    padding-top: 80px;
+}
+
+
+/*ESTILOS GASTRONOMIA*/
+.fondo-gastronomia{
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.7) ,rgba(0,0,0,0.6)) , url(../img/fondo-gastromonia.jpg);
+}
+
+.fondo-gastronomia p , .fondo-gastronomia h2{
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.logo-gastro{
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 100%;
+    padding: 10px;
+}
+.color-btn{color: yellow; margin-top: 20px;}
+
+.flex-logo{
+    display: flex;
+    justify-content: space-evenly;
+}
+@media(max-width: 600px){
+    .flex-logo{
+        flex-direction: column;
+    }
+}
+@media(max-width: 800px){
+    .flex-logo{
+        flex-direction: column;
+    }
+}
+.flex-logo-gastro{
+ display: flex,;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+/*ESTILOS BTN-FOOTER*/
+.btn-footer {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .btn-footer:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: yellow;
+  }
+  
+
+  /*ESTILOS MAPA*/
+  #map{
+      margin-top: 50px;
+      border: 1px solid red;
+      width: 100%;
+      height: 350px;
+  }

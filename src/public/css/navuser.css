@@ -1,0 +1,107 @@
+/*ESTILOS GENERALES DE LOS USUARIOS*/
+.btn-input{
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(0, 80, 199, 0.8);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.btn-input:hover{background-color:rgba(0, 80, 199, 0.9);color: #ffffff; text-decoration: none;}
+
+.relative{position: relative;}
+
+/*ESTILOS HEADER*/
+.parrallax{
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-fondo{
+    background-image: linear-gradient(rgba(0,0,0,0.5) , rgba(0,0,0,0.8)) , url(../img/fondo-users.jpg);
+    height: 45vh;
+}
+.title-header{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+.title-header h1{
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4vw;
+}
+
+
+
+
+/*ESTILOS NAVIGATION*/
+.navigation{
+    background-color: rgba(0, 80, 199, 0.863);
+    padding-top: 10px;
+}
+
+.flex-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.centrar{
+    margin: auto auto;
+    text-align: center;
+}
+
+/*DESAPARECER DIV TITLE-HEADER*/
+.colo-h1-user{
+    padding-top: 10%;
+    text-align: center;
+    color: yellow;
+}
+
+.flex-nav .nav-item .nav-link{
+    border: 1px solid yellow;
+    padding: 8px;
+    color: #ffffff;
+}
+
+/*ESTILOS FOOTER*/
+.footer{
+    background-color:  rgba(0, 80, 199, 0.8);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .footer h3{
+      color: #ffffff;
+  }
+  .footer .link-footer{
+     color: #ffffff;
+     font-size: 23px;
+     font-family: 'Courier New', Courier, monospace;
+  }
+  .footer .link-footer:hover{color: yellow;text-decoration: none;}
+  
+  .footer li .redes i{
+      width: 45px;
+      height: 45px;
+      line-height: 1.5;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      color: yellow;
+      border-radius: 100%;
+      margin-top: 10px;
+  }
+  .footer li .redes i:hover{color: #ffffff;}
+  .logo-footer{
+      width: 120px;
+      height: 120px;
+  }

@@ -16,25 +16,25 @@ HERRAMIENTAS :
 ## Imagenes
 VISTA CLIENTE:
 - 1
-![header](https://user-images.githubusercontent.com/68178186/105266263-2d011b00-5b5f-11eb-9464-342dca5a8448.PNG)
+![header-plato](https://user-images.githubusercontent.com/68178186/105885865-b4bfad00-5fd7-11eb-82ae-617d024158f9.PNG)
 - 2
-![header2](https://user-images.githubusercontent.com/68178186/105265445-dabffa00-5b5e-11eb-9ee0-1777b5db6754.PNG)
+![header-plato2](https://user-images.githubusercontent.com/68178186/105885881-ba1cf780-5fd7-11eb-93b5-d49edfb11bc7.PNG)
 - 3
-![header3](https://user-images.githubusercontent.com/68178186/105265497-e1e70800-5b5e-11eb-8840-74ce8504dbf2.PNG)
+![header-plato3](https://user-images.githubusercontent.com/68178186/105885892-bd17e800-5fd7-11eb-8468-99563c4a3b61.PNG)
 - 4
-![header4](https://user-images.githubusercontent.com/68178186/105265529-f0352400-5b5e-11eb-8773-921eb01bc17c.PNG)
+![header-plato4](https://user-images.githubusercontent.com/68178186/105885901-bf7a4200-5fd7-11eb-8fb1-2f6cf3a20044.PNG)
 - 5
-![6](https://user-images.githubusercontent.com/68178186/105265822-1064e300-5b5f-11eb-943d-910b0511776b.PNG)
+![header-plato5](https://user-images.githubusercontent.com/68178186/105885907-c1dc9c00-5fd7-11eb-9457-3e12f308c2aa.PNG)
 - 6
-![header5](https://user-images.githubusercontent.com/68178186/105266662-46a26280-5b5f-11eb-9cc2-fc0984b7871f.PNG)
+![platos-publicdos](https://user-images.githubusercontent.com/68178186/105885918-c6a15000-5fd7-11eb-9369-313e4397855d.PNG)
 - 7
-![header6](https://user-images.githubusercontent.com/68178186/105266958-58840580-5b5f-11eb-95ef-b170de686e91.PNG)
+![vista-plato](https://user-images.githubusercontent.com/68178186/105885926-ca34d700-5fd7-11eb-9b00-374b7bda54df.PNG)
 - 8
-![header-mapa](https://user-images.githubusercontent.com/68178186/105267302-6d609900-5b5f-11eb-9dab-4773be47763b.PNG)
+![mapa](https://user-images.githubusercontent.com/68178186/105886003-e9cbff80-5fd7-11eb-941c-5919ef08e01c.PNG)
 - 9
-![header-register](https://user-images.githubusercontent.com/68178186/105267442-75b8d400-5b5f-11eb-952f-7db0d0060af1.PNG)
+![login](https://user-images.githubusercontent.com/68178186/105886020-ecc6f000-5fd7-11eb-9ca8-3924d3dfcc82.PNG)
 - 10
-![login-header](https://user-images.githubusercontent.com/68178186/105267602-7f423c00-5b5f-11eb-94c3-78c43f0ef04e.PNG)
+![registro](https://user-images.githubusercontent.com/68178186/105886028-ee90b380-5fd7-11eb-84df-9e84bf1c73e2.PNG)
 
 
 
@@ -47,6 +47,7 @@ VISTA USUARIO:
 ![user-register](https://user-images.githubusercontent.com/68178186/105268120-a1d45500-5b5f-11eb-82b0-c1014fe1c0f5.PNG)
 - 4
 ![user-register-new](https://user-images.githubusercontent.com/68178186/105268141-aac52680-5b5f-11eb-8a39-7c4201779f2b.PNG)
+
 
 
 

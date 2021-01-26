@@ -40,13 +40,14 @@ VISTA CLIENTE:
 
 VISTA USUARIO:
 - 1
-![user-into](https://user-images.githubusercontent.com/68178186/105267745-88cba400-5b5f-11eb-8d9e-109dee73ef67.PNG)
+![registros-plato](https://user-images.githubusercontent.com/68178186/105886815-dd947200-5fd8-11eb-9678-aad6222c70c9.PNG)
 - 2
-![user-list](https://user-images.githubusercontent.com/68178186/105267921-954ffc80-5b5f-11eb-9ee0-de28f703a424.PNG)
+![lista-platos](https://user-images.githubusercontent.com/68178186/105886820-dff6cc00-5fd8-11eb-8da0-9b463a316496.PNG)
 - 3
-![user-register](https://user-images.githubusercontent.com/68178186/105268120-a1d45500-5b5f-11eb-82b0-c1014fe1c0f5.PNG)
+![update-plato](https://user-images.githubusercontent.com/68178186/105886824-e2592600-5fd8-11eb-8a0d-eff0915f44bd.PNG)
 - 4
-![user-register-new](https://user-images.githubusercontent.com/68178186/105268141-aac52680-5b5f-11eb-8a39-7c4201779f2b.PNG)
+![update-plato-list](https://user-images.githubusercontent.com/68178186/105886830-e422e980-5fd8-11eb-893f-0381bd5859dc.PNG)
+
 
 
 

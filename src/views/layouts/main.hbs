@@ -25,7 +25,11 @@
 <body>
 
   <!--NAV-->
-  {{>navigation}}
+  {{#if user}}
+    {{>navUser}}
+  {{else}}
+    {{>navCliente}}
+  {{/if}}
   <!--END-NAV-->
   <main>
     <div class="">

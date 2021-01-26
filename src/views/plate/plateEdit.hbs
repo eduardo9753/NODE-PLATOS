@@ -7,7 +7,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="my-2">New Foto</label>
-                                <input type="file" name="foto" id="" class="form-control" required autofocus>
+                                <input type="file" name="foto" id="" class="form-control" autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="" class="my-2">Nombre</label>
@@ -40,6 +40,7 @@
                         <div class="col-md-6">
                             <p>Foto Actual</p>
                             <img src="/{{data.path}}" alt="Image of the House">
+                            <input type="hidden" value="{{data.path}}" name="foto_actual">
                         </div>
                     </div>
                 </form>

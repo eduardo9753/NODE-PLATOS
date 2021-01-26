@@ -3,15 +3,7 @@
         <div class="container flex-nav">
             <div><a href="/"><img src="/img/logo.svg" alt="LogoTipo" class="logo"></a></div>
             <div>
-                <ul class="flex-nav">
-                    <li><a href="/" class="link-nav">Home</a></li>
-                    <li><a href="/plates" class="link-nav">Platos</a></li>
-                    <li><a href="/mapa" class="link-nav">Mapa</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul class="flex-nav">
-                    {{#if user}}
+                <ul class="">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -24,20 +16,11 @@
                             <li><a class="dropdown-item" href="/users/logout">Logout</a></li>
                         </ul>
                     </li>
-                    {{else}}
-                    <li><a href="/users/signin" class="link-register" id="formLogin">Login</a></li>
-                    <li><a href="/users/signup" class="link-register">Register</a></li>
-                    {{/if}}
                 </ul>
             </div>
         </div>
     </nav>
-    {{#if user}} <div class="title-header">
+    <div class="title-header">
         <h1 class="title-h1">USERS</h1>
     </div>
-    {{else}}
-    <div class="title-header">
-        <h1 class="title-h1">VEN Y CONOCE LOS MEJORES PLATOS TIPICOS DEL PERU</h1>
-    </div>
-    {{/if}}
 </header>

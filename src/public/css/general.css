@@ -45,7 +45,7 @@ img{
     color: #ffffff;
 }
 
-nav{
+.nav-fixed{
     position: fixed;
     width: 100%;
     z-index: 900;

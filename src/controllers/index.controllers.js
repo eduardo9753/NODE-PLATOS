@@ -12,6 +12,7 @@ indexController.index = (req, res) => {
      }
 }
 
+/********FUNCION SUSTITUIDA POR LA PAGINACION*******/
 indexController.plates = async (req, res) => {
      try {
           const plates = await Plate.find({}).lean();
@@ -21,6 +22,30 @@ indexController.plates = async (req, res) => {
           console.log(error);
      }
 }
+//**************************************************/
+
+indexController.paginate = async (req , res) => {
+     try {
+         let verPorPagina = 9;              //NUMEROS DE PAGINAS QUE VAS A VISUALIZAR
+         let pagina = req.params.page || 1; //VARIABLE DE LA PAGINA QUE RECIVO DEL CLIENTE
+         console.log('Pagina',pagina);
+         const plates = await Plate.find({}).lean()
+                                   .skip((pagina - 1)* verPorPagina)
+                                   .limit(verPorPagina)
+                                   .exec();
+         let total = await Plate.count();   //CONTAMOS EL TOTAL DE DATOS
+         console.log('Total', total);
+         console.log('plates:' , plates);
+         res.render('plates.hbs' , {
+             plates  : plates,
+             current : pagina,
+             paginas : Math.ceil(total / verPorPagina)
+         });
+ 
+     } catch (error) {
+         console.log(error);
+     }
+ }
 
 indexController.view = async (req, res) => {
      try {

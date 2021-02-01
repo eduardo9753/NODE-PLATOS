@@ -7,7 +7,7 @@ const router = Router();
 const indexController = require('../controllers/index.controllers');
 
 router.get('/', indexController.index);//VIEW INDEX O HOME
-router.get('/plates' , indexController.plates);//VIEW DE LOS PLATOS
+router.get('/plates/:page' , indexController.paginate);//VIEW DE LOS PLATOS
 router.post('/view/:id' , indexController.view);//VIEW PLATE POR ID
 router.get('/mapa' , indexController.mapa);//VIEW MAPA
 

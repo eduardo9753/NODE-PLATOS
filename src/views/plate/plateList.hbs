@@ -11,7 +11,7 @@
                         </div>
                         <div class="card-body">
                             <h2 class=""> Title <i class='bx bxs-select-multiple'></i> : {{nombre}}</h2>
-                            <p class=""> Description <i class='bx bxs-message-square-detail' ></i> : {{description}}</p>
+                            <p class=""> Description <i class='bx bxs-message-square-detail'></i> : {{description}}</p>
                             <p class=""> Price <i class='bx bxs-coin-stack'></i> : {{precio}}</p>
                             <p class=""> File Name <i class='bx bxs-file-archive'></i> : {{foto}}</p>
                             <p class=""> Dificultad de Preparacion <i class='bx bx-bar-chart-alt'></i> : {{nivel}}</p>
@@ -22,10 +22,10 @@
                                 <form action="/plate/delete/{{_id}}?_method=DELETE" method="POST">
                                     <div class="form-group">
                                         <input type="hidden" name="_method" id="" value="">
-                                        <input type="submit" name="" id="" class="btn btn-danger" value="DELETE">
+                                        <input type="submit" name="" id="" class="btn-input-delete my-2" value="DELETE">
                                     </div>
                                 </form>
-                                <a href="/plate/edit/{{_id}}" class="btn btn-success">EDITAR PLATO</a>
+                                <a href="/plate/edit/{{_id}}" class="btn-input">EDITAR PLATO</a>
                             </div>
                         </div>
                     </div>
@@ -43,6 +43,17 @@
                 </div>
             </div>
             {{/each}}
+            {{#if paginas}}
+            <nav class="Page navigation example">
+                <ul class="pagination">
+                    {{{firtPagina current}}}
+                    {{#if user}}
+                      {{{paginationUser current paginas}}}
+                    {{/if}}
+                    {{{lastPagina current paginas}}}
+                </ul>
+            </nav>
+            {{/if}}
         </div>
     </div>
 </section>

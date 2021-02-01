@@ -12,6 +12,19 @@
 }
 .btn-input:hover{background-color:rgba(0, 80, 199, 0.9);color: #ffffff; text-decoration: none;}
 
+.btn-input-delete{
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(235, 28, 28, 0.8);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.btn-input-delete:hover {background-color: rgba(235, 28, 28, 0.9);}
+
 .relative{position: relative;}
 
 /*ESTILOS HEADER*/
@@ -44,7 +57,7 @@
 
 
 /*ESTILOS NAVIGATION*/
-.navigation{
+.nav{
     background-color: rgba(0, 80, 199, 0.863);
     padding-top: 10px;
 }

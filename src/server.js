@@ -13,10 +13,12 @@ const exphbs         = require('express-handlebars'); //MOTOR DE PLATILLAS
 
 
 //MANEJOR DE SESSIONES
-const MongoStore     = require('connect-mongo')(session);//SE USA PARA GUARDAR SESSIONES EN MONGODB
-const passport       = require('passport'); //PARA INICIAR PASSPORT
-const connt          = require('./database/database');  //INSTANCIA DE MI BD PARA MONGOSTORE
-
+const MongoStore     = require('connect-mongo')(session); //SE USA PARA GUARDAR SESSIONES EN MONGODB
+const passport       = require('passport');               //PARA INICIAR PASSPORT
+const connt          = require('./database/database');    //INSTANCIA DE MI BD PARA MONGOSTORE
+const { timeago , isAuthenticated }  = require('./helpers/auth'); //AUTHENTICATION
+const { firtPagina , paginationCliente , paginationUser , lastPagina } = require('./helpers/handlebars');
+                                                          //PAGINATION
 //INICIANDO SOCKET IO
 const server = Http.createServer(app);
 const io = socketIo().listen(server);
@@ -29,6 +31,7 @@ const users          = require('./routes/users.router');
 const plate          = require('./routes/plate.router');
 require('./config/passport');//INPORTAMOS LAS AUTHENTICACIONES DE USUARIO
 
+
 //SETTING PORT
 app.set('port' , process.env.PORT || 4006);
 
@@ -39,7 +42,7 @@ app.engine('.hbs' , exphbs( {
    layoutsDir    : path.join(app.get('views') , 'layouts'),
    partialsDir   : path.join(app.get('views') , 'partials'),
    extname       : '.hbs',
-   helpers       : require('./helpers/auth')
+   helpers       : { isAuthenticated , timeago , firtPagina , paginationCliente , paginationUser , lastPagina}
 }));
 app.set('view engine' , '.hbs');
 

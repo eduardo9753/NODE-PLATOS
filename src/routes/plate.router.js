@@ -11,7 +11,7 @@ const platesController = require('../controllers/plates.controllers');
 router.get('/plate/Form' , isAuthenticated , platesController.plateForm);//VIEW DEL FORM PLATE DEL USER
 router.post('/plate/FormAdd' , isAuthenticated , platesController.plateFormAdd);//RECOJO DE DATOS DE FORM PLATE DEL USER
 
-router.get('/plate/list' , isAuthenticated , platesController.plateList);//VIEWS DE TODO LOS PLATOS POR PARTE DEL USER
+router.get('/plate/list/:page' , isAuthenticated , platesController.paginacion);//VIEWS DE TODO LOS PLATOS POR PARTE DEL USER
 
 router.get('/plate/edit/:id' , isAuthenticated , platesController.plateEdit);//DATA DEL PLATO POR ID DEL USER
 router.put('/plate/edit/:id' , isAuthenticated , platesController.plateUpdate);//UPDATE DEL PLATO "EDIT" DEL USER

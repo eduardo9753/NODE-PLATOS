@@ -10,7 +10,7 @@ usersController.singupForm = (req , res) => {
 }
 usersController.singupFormAdd = passport.authenticate('local.signup' , {
      failureRedirect : '/users/signup',
-     successRedirect : '/plate/list',
+     successRedirect : '/plate/list/1',
      failureFlash : true
 });
 
@@ -20,7 +20,7 @@ usersController.singinForm = (req, res) => {
 }
 usersController.singinFormAdd = passport.authenticate('local.signin' , {
      failureRedirect : '/users/signin',
-     successRedirect : '/plate/list',
+     successRedirect : '/plate/list/1',
      failureFlash : true
 });
 

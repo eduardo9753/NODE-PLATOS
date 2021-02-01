@@ -34,25 +34,48 @@ platesController.plateFormAdd = async (req, res) => {//RECOJO DE DATOS DE FORM P
         plate.path        = 'uploads/' + req.file.filename;//CUANDO RECORRA LAS IMG BUSCARA ESTA RUTA 
         plate.mimetype    = req.file.mimetype;             //YA QUE PUBLIC ESTA "PUBLICO" BUSCARA LA RUTA EN EL SERVER
         plate.tamanio     = req.file.size;                 //VALOR REQ.FILE :tamano de la img : 345kv
-        plate.user        = req.user.id;                   //ASIGNAMOS EL ID DE LA SESSION MUY IMPORTANTE
+        plate.user        = req.user.id;                   //ASIGNAMOS EL ID DEl USER LA SESSION MUY IMPORTANTE
         const correct     = await plate.save();
         if (correct) {
             req.flash('success_user', 'SAVE CORRECT');
             res.redirect('/plate/list');
         } else {
             req.flash('error_user', 'NO SE PUEDO GUARDAR :(...');
-            res.redirect('/plate/list');
+            res.redirect('/plate/list/1');
         }
     } catch (error) {
         console.log(error);
     }
 }
 
+
+/********FUNCION SUSTITUIDA POR LA PAGINACION*******/
 platesController.plateList = async (req, res) => {
     try {
         const plates = await Plate.find({ user: req.user.id }).sort({ createdAt: 'DESC' }).lean();
         console.log('list Plate: ', plates);
         res.render('plate/plateList.hbs', { plates: plates });
+    } catch (error) {
+        console.log(error);
+    }
+}
+//**************************************************/
+
+
+platesController.paginacion = async (req, res) => {
+    try {
+        let verPorPagina = 9;
+        let pagina = req.params.page || 1;
+        const plates = await Plate.find({ user: req.user.id }).sort({ createdAt: 'DESC' }).lean()
+                                  .skip((pagina - 1)* verPorPagina)
+                                  .limit(verPorPagina)
+                                  .exec();
+        let total = await Plate.count();
+        res.render('plate/plateList.hbs', {
+            plates  : plates ,
+            current : pagina ,
+            paginas : Math.ceil(total / verPorPagina)
+        });
     } catch (error) {
         console.log(error);
     }
@@ -82,7 +105,7 @@ platesController.plateUpdate = async (req, res) => {
             let nivel       = req.body.nivel;              //CAJA DE TEXTO
             let precio      = req.body.precio;             //CAJA DE TEXTO     
             let filename    = req.file.filename;           //NOMBRE ENCRYPTADO DE LA IMG
-            let path = 'uploads/' + req.file.filename;//almacena la ruta : 'uploads/nombre de la img encryptada' 
+            let path = 'uploads/' + req.file.filename;     //ALMACENA LA RUTA NUEVA DE LA IMG' 
             let mimetype    = req.file.mimetype;           //VALOR REQ.FILE : extension de la imagen : image/jpeg
             let tamanio     = req.file.size;               //VALOR REQ.FILE :tamano de la img : 345kv
             let user        = req.user.id;                 //ASIGNAMOS EL ID DE LA SESSION MUY IMPORTANTE

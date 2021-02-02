@@ -38,7 +38,7 @@ platesController.plateFormAdd = async (req, res) => {//RECOJO DE DATOS DE FORM P
         const correct     = await plate.save();
         if (correct) {
             req.flash('success_user', 'SAVE CORRECT');
-            res.redirect('/plate/list');
+            res.redirect('/plate/list/1');
         } else {
             req.flash('error_user', 'NO SE PUEDO GUARDAR :(...');
             res.redirect('/plate/list/1');

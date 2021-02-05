@@ -35,6 +35,7 @@ platesController.plateFormAdd = async (req, res) => {//RECOJO DE DATOS DE FORM P
         plate.mimetype    = req.file.mimetype;             //YA QUE PUBLIC ESTA "PUBLICO" BUSCARA LA RUTA EN EL SERVER
         plate.tamanio     = req.file.size;                 //VALOR REQ.FILE :tamano de la img : 345kv
         plate.user        = req.user.id;                   //ASIGNAMOS EL ID DEl USER LA SESSION MUY IMPORTANTE
+        console.log('id User: ' ,req.user.id);
         const correct     = await plate.save();
         if (correct) {
             req.flash('success_user', 'SAVE CORRECT');
@@ -70,7 +71,7 @@ platesController.paginacion = async (req, res) => {
                                   .skip((pagina - 1)* verPorPagina)
                                   .limit(verPorPagina)
                                   .exec();
-        let total = await Plate.count();
+        let total = await Plate.countDocuments();
         res.render('plate/plateList.hbs', {
             plates  : plates ,
             current : pagina ,
@@ -139,10 +140,10 @@ platesController.plateUpdate = async (req, res) => {
             if (update) {
                 console.log('RUTA ANTERIO :', update.path);
                 req.flash('success_user', 'UPDATE SUCCESS PLATE');
-                res.redirect('/plate/list');
+                res.redirect('/plate/list/1');
             } else {
                 req.flash('error_user', 'ERROR UPDATE PLATE');
-                res.redirect('/plate/list');
+                res.redirect('/plate/list/1');
             }
         }
     } catch (error) {
@@ -158,10 +159,10 @@ platesController.plateDelete = async (req, res) => {
         if (plate) {
             await unlink(pathDelete.resolve('./src/public/' + plate.path));
             req.flash('success_user', 'DELETED SUCCESS PLATE');
-            res.redirect('/plate/list');
+            res.redirect('/plate/list/1');
         } else {
             req.flash('error_user', 'ERROR DE ELIMANACION');
-            res.redirect('/plate/list');
+            res.redirect('/plate/list/1');
         }
     } catch (error) {
         console.log(error);

@@ -33,7 +33,7 @@ indexController.paginate = async (req , res) => {
                                    .skip((pagina - 1)* verPorPagina)
                                    .limit(verPorPagina)
                                    .exec();
-         let total = await Plate.count();   //CONTAMOS EL TOTAL DE DATOS
+         let total = await Plate.countDocuments();   //CONTAMOS EL TOTAL DE DATOS
          console.log('Total', total);
          console.log('plates:' , plates);
          res.render('plates.hbs' , {

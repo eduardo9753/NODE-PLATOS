@@ -47,12 +47,12 @@ passport.use('local.signup' , new LocalStrategy({
 
 passport.serializeUser((user , done) => {
     console.log('SERIALIZEUSER USER : ' , user);
-    done(null , user._id);
+    done(null , user.id);
 });
 
-passport.deserializeUser((_id , done) => {
-    console.log('SERIALIZEUSER USER _id: ' , _id);
-    User.findById(_id , (err , user) => {
+passport.deserializeUser((id , done) => {
+    console.log('DESERIALIZEUSER: ' , id);
+    User.findById(id , (err , user) => {
         done(err , user);
     })
 });

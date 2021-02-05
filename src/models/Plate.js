@@ -30,7 +30,8 @@ const PlateSchema = new Schema({
     type :Number 
   },
   user        : { 
-    type : String 
+    type : Schema.Types.ObjectId, //antes type : String
+    ref  : 'User' 
   }
 }, {
   timestamps : true  

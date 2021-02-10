@@ -4,12 +4,12 @@ const router = Router();
 
 
 //CONTROLLERS INDEX
-const indexController = require('../controllers/index.controllers');
+const {index , paginate , view , mapa} = require('../controllers/index.controllers');
 
-router.get('/', indexController.index);//VIEW INDEX O HOME
-router.get('/plates/:page' , indexController.paginate);//VIEW DE LOS PLATOS
-router.post('/view/:id' , indexController.view);//VIEW PLATE POR ID
-router.get('/mapa' , indexController.mapa);//VIEW MAPA
+router.get('/', index);//VIEW INDEX O HOME
+router.get('/plates/:page' , paginate);//VIEW DE LOS PLATOS
+router.post('/view/:id' , view);//VIEW PLATE POR ID
+router.get('/mapa' , mapa);//VIEW MAPA
 
 
 //EXPORTAMOS LA RUTA

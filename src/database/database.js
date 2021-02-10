@@ -4,7 +4,8 @@ const  { database } = require('./keys.js');
 //CONEXION
 mongoose.connect(database.URI ,{
     useNewUrlParser : true ,
-    useUnifiedTopology : true 
+    useUnifiedTopology : true ,
+    useCreateIndex : true
 }).then( (bd) => console.log('Conectado :)'))
   .catch( (err) => console.log(err));
 

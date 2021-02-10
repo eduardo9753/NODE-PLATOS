@@ -89,6 +89,7 @@ app.use(plate);
 //STATIC PUBLIC
 app.use(express.static(path.join(__dirname, 'public')));
 
+//SETTING SERVER PORT
 server.listen(app.get('port') , () => {
     console.log('SERVER RUIING :' , app.get('port'));
 })

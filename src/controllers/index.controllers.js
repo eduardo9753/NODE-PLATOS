@@ -53,7 +53,6 @@ class indexController {
           } catch (error) {
                console.log(error);
           }
-
      }
 
      mapa = (req, res) => {
@@ -63,7 +62,6 @@ class indexController {
                console.log(error);
           }
      }
-
 }
 
 

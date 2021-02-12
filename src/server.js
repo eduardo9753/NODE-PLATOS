@@ -19,6 +19,7 @@ const connt          = require('./database/database');    //INSTANCIA DE MI BD P
 const { timeago , isAuthenticated }  = require('./helpers/auth'); //AUTHENTICATION
 const { firtPagina , paginationCliente , paginationUser , lastPagina } = require('./helpers/handlebars');
                                                           //PAGINATION
+                                                          
 //INICIANDO SOCKET IO
 const server = Http.createServer(app);
 const io = socketIo().listen(server);
@@ -35,6 +36,7 @@ require('./config/passport');//INPORTAMOS LAS AUTHENTICACIONES DE USUARIO
 //SETTING PORT
 app.set('port' , process.env.PORT || 4006);
 
+
 //SETTING VIEW
 app.set('views' , path.join(__dirname, 'views'));
 app.engine('.hbs' , exphbs( {
@@ -46,10 +48,21 @@ app.engine('.hbs' , exphbs( {
 }));
 app.set('view engine' , '.hbs');
 
+
 //MIDDLEWARES
 app.use(express.urlencoded({ extended : true }));
 app.use(morgan('dev'));//PETICIONES PARA EL SERVIDOR
 app.use(methodOverride('_method'));//PARA LOS ENVIOS DE FORMATO PUT Y DELETE
+app.use(session({
+    secret       : process.env.SESSION_SECRET || 'secret',
+    resave       : false ,
+    saveUninitialized : false,
+    store        : new MongoStore({ mongooseConnection : connt.connection })//GUARDAMOS LA SESSION EN LA BD PARA
+}));                                                                //MANTENERLO
+app.use(passport.initialize());//INICIALIZANDO PASSPORT
+app.use(passport.session());//INICIALIZANDO PASSPORT
+app.use(flash());
+
 const storeImg = multer.diskStorage({
     destination  : path.join(__dirname, '/public/uploads/'),
     filename : (req , file , cb ) => {
@@ -62,16 +75,8 @@ const imgUploads = multer({
 }).single('foto');
 app.use(imgUploads);
 
+
 //MENSAGES FLASH Y SESSION
-app.use(session({
-    secret       : process.env.SESSION_SECRET || 'secret',
-    resave       : false ,
-    saveUninitialized : false,
-    store        : new MongoStore({ mongooseConnection : connt.connection })//GUARDAMOS LA SESSION EN LA BD PARA
-}));                                                                //MANTENERLO
-app.use(passport.initialize());//INICIALIZANDO PASSPORT
-app.use(passport.session());//INICIALIZANDO PASSPORT
-app.use(flash());
 app.use((req , res , next) => {
     res.locals.success_user = req.flash('success_user');
     res.locals.error_user   = req.flash('error_user');
@@ -86,8 +91,10 @@ app.use(router);
 app.use(users);
 app.use(plate);
 
+
 //STATIC PUBLIC
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 //SETTING SERVER PORT
 server.listen(app.get('port') , () => {
